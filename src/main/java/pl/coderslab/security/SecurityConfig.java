@@ -2,7 +2,6 @@ package pl.coderslab.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -28,11 +27,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers("/").permitAll()
+            .antMatchers("/register").hasRole("ADMIN")
+            .antMatchers("/delivery/choose/user").hasRole("ADMIN")
+            .antMatchers("/delivery/user/delivery").hasRole("ADMIN")
+            .antMatchers("/delivery/for/all/delivery").hasRole("ADMIN")
             .and()
             .formLogin()
             .loginPage("/login")
             .defaultSuccessUrl("/", true)
-            .failureUrl("/login.html?error=true")
+            .failureUrl("/login?error=true")
             .and()
             .logout()
             .logoutUrl("/logout")

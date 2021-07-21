@@ -11,6 +11,12 @@
 <section class="dashboard-section">
   <div class="row dashboard-nowrap">
     <ul class="nav flex-column long-bg">
+      <li class="nav-item">
+        <a class="nav-link" href="/car/add">
+          <span class="nav-link color-header" >Dodaj Samochód</span>
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </li>
 
       <c:forEach var="cars" items="${cars}" >
       <li class="nav-item">

@@ -12,21 +12,29 @@
     <title>Register</title>
 </head>
 <body>
-<h1>Register</h1>
-<form:form method="post" modelAttribute="user">
-    <br>User Name<br>
-    <form:input path="username"/>
-    <form:errors path="username"/>
-    <br>Password<br>
-    <form:input path="password"/>
-    <form:errors path="password"/>
-    <br>
-    <input type="submit" value="Register"/>
-</form:form>
-<%--    <form method="post" action="/register">--%>
-<%--        <div><label>User Name : <input type="text" name="username"/> </label></div>--%>
-<%--        <div><label>Password : <input type="password" name="password"/> </label></div>--%>
-<%--        <div><input type="submit" value="Register"/></div>--%>
-<%--    </form>--%>
+<%@include file="../header.jsp"%>
+
+<section class="dashboard-section">
+    <div class="container pt-4 pb-4">
+        <div class="border-dashed view-height">
+            <div class="container w-25">
+                <form class="padding-small text-center" action="/login" method="post">
+                    <h1>Rejestracja</h1>
+                    <form:form method="post" modelAttribute="user">
+                        <br>Nazwa użytkownika<br>
+                        <form:input path="username" placeholder="podaj nazwę użytkownika" />
+                        <form:errors path="username"/>
+                        <br>Hasło<br>
+                        <form:input path="password" placeholder="podaj hasło" />
+                        <form:errors path="password"/>
+                        <br><br>
+                        <input class="btn btn-color rounded-0" type="submit" value="Zarejestruj"/>
+                    </form:form>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>

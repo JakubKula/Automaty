@@ -43,11 +43,13 @@
                     <a class="nav-link color-header" href="/login">Logowanie</a>
                 </li>
             </sec:authorize>
+            <sec:authorize access="hasRole('ADMIN')">
+                <li class="nav-item ml-4">
+                    <a class="nav-link color-header" href="/register">Rejestracja</a>
+                </li>
+            </sec:authorize>
             <li class="nav-item ml-4">
-                <a class="nav-link color-header" href="/register">Rejestracja</a>
-            </li>
-            <li class="nav-item ml-4">
-                <a class="nav-link" href="/warehouse/all/1">Magazyn</a>
+                <a class="nav-link" href="/warehouse/all">Magazyn</a>
             </li>
             <li class="nav-item ml-4">
                 <a class="nav-link disabled" href="/product/all">Produkty</a>
@@ -56,8 +58,16 @@
                 <a class="nav-link disabled" href="/car/all">Samochody</a>
             </li>
             <li class="nav-item ml-4">
-                <a class="nav-link disabled" href="/vending/all">Maszyny</a>
+                <a class="nav-link disabled" href="/vending/all">Automaty</a>
             </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link disabled" href="/delivery/delivery">Dostawa</a>
+            </li>
+            <sec:authorize access="isAuthenticated()">
+            <li class="nav-item ml-4">
+                <a class="nav-link disabled" href="/delivery/all/delivery">Dostawy</a>
+            </li>
+            </sec:authorize>
         </ul>
     </nav>
 </header>

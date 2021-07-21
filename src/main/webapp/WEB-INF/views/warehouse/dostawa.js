@@ -15,10 +15,6 @@ input.addEventListener("click", e=> {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-
-
-
-
 });
 
 function clickMe(){

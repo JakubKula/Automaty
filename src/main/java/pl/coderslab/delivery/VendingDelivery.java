@@ -18,6 +18,7 @@ public class VendingDelivery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String type;
     @ManyToOne
     private Product product;
     private int amount;

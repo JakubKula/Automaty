@@ -18,18 +18,6 @@ public class UserController {
         this.userService = userService;
     }
 
-
-//    @GetMapping("/create-user")
-//    @ResponseBody
-//    public String createUser() {
-//        User user = new User();
-//        user.setEnabled(1);
-//        user.setUsername("123");
-//        user.setPassword("123");
-//        userService.saveUser(user);
-//        return "admin";
-//    }
-
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String login(){
         return "users/login";
@@ -51,7 +39,7 @@ public class UserController {
             return "users/register";
         }
         userService.saveUser(user);
-        return "redirect:login";
+        return "redirect:/login";
     }
 
     @GetMapping("/admin")

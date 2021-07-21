@@ -39,7 +39,7 @@
                         <th class="col-1">Rozmiar opakowania</th>
                         <th class="col-2">Typ</th>
                         <th class="col-2">Opis</th>
-                        <th class="col-3">Waga</th>
+                        <th class="col-3">Waga/Objętość</th>
                         <th class="col-1 center">AKCJE</th>
                     </tr>
                     </thead>
@@ -58,7 +58,7 @@
                             <td class="col-2">
                                     ${items.description}
                             </td>
-                            <td class="col-3">
+                            <td class="col-2">
                                 <c:choose>
                                 <c:when test="${items.type.equals('puszka')||items.type.equals('PET')}" >
                             <td>${items.weight} ml</td>
@@ -81,6 +81,9 @@
     </div>
     </section>
 
+</sec:authorize>
+<sec:authorize access="isAnonymous()">
+    <h1 align="center">Aby zobaczyć treści musisz być zalogowany</h1>
 </sec:authorize>
 </body>
 </html>

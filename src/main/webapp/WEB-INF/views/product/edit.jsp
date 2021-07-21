@@ -9,28 +9,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edytuj produkt</title>
+    <title>Edycja Produktu</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="product" action="/products/update">
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Pack Size</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Weight</th>
-        </tr>
-        <tr>
-            <form:hidden path="id"/>
-            <th><form:input path="name" /></th>
-            <th><form:input path="packSize"/></th>
-            <th><form:select path="type" items="${type}"/></th>
-            <th><form:input path="description"/></th>
-            <th><form:input path="weight"/></th>
-        </tr>
-    </table>
-    <button type="submit">Zmień</button>
-</form:form>
+<%@include file="../header.jsp"%>
+<sec:authorize access="isAuthenticated()">
+
+
+<form:form method="post" modelAttribute="product" action="/product/update" cssClass="m-4 p-3 width-medium">
+
+<section class="dashboard-section">
+    <div class="container pt-4 pb-4">
+        <div class="border-dashed view-height">
+            <div class="container w-25">
+                <h1 class="text-color-darker">Edycja produktu</h1>
+                <div class="form-group">
+                    <br>Nazwa<br>
+                    <form:hidden path="id"/>
+                    <form:input path="name" />
+                    <br>Ilość w opakowaniu<br>
+                    <form:input path="packSize"/>
+                    <br>Typ<br>
+                    <form:select path="type" items="${type}"/>
+                    <br>Opis<br>
+                    <form:input path="description"/>
+                    <br>Waga/Objętość<br>
+                    <form:input path="weight"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-color rounded-0" type="submit">Zmień</button>
+                </div>
+                </form:form>
+                </sec:authorize>
+                <sec:authorize access="isAnonymous()">
+                <h1 align="center">Aby zobaczyć treści musisz być zalogowany</h1>
+                </sec:authorize>
 </body>
 </html>

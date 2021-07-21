@@ -9,41 +9,46 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<script src="dostawa.js" type="text/javascript"></script>
-
-
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Dostawa</title>
+    <title>Dostawa do magazynu</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="delivery">
-    <table>
-        <thead>
-        <tr>
-            <td>Produkt</td>
-            <td>Ilość</td>
-            <td>Magazyn</td>
-        </tr>
-        </thead>
-        <tr>
-            <td><form:select path="product" items="${products}" itemLabel="fullName"  itemValue="id" />
-            <form:errors path="product"/></td>
+<%@include file="../header.jsp"%>
+<sec:authorize access="isAuthenticated()">
+<%@include file="../dashboardDelivery.jsp"%>
+<form:form method="post" modelAttribute="delivery" action="/delivery/delivery" cssClass="m-4 p-3 width-medium">
 
-            <td><form:input path="amount"/>
-            <form:errors path="amount"/></td>
+<section class="dashboard-section">
+    <div class="container pt-4 pb-4">
+        <div class="border-dashed view-height">
+            <div class="container w-25">
+                <h1 class="text-color-darker">Dostawa </h1>
+                <div class="form-group">
+                    <br>Produkt<br>
+                    <td><form:select path="product" items="${products}" itemLabel="fullName"  itemValue="id" />
+                        <form:errors path="product"/></td>
+                    <br>Ilość paczek:<br>
+                    <td><form:input path="amount" />
+                        <form:errors path="amount" /></td>
 
-            <td><form:select path="warehouse" items="${warehouses}" itemLabel="name" itemValue="id" />
-            <form:errors path="warehouse"/></td>
-        </tr>
+                    <br>Magazyn<br>
+                    <td><form:select path="warehouse" items="${warehouses}" itemLabel="name" itemValue="id" />
+                        <form:errors path="warehouse"/></td>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-color rounded-0" type="submit">Dodaj dostawę</button>
 
-    </table>
-    <br>
-    <button id="dodaj-produkt"> <i class="fa fa-plus-square-o"></i><a class="nav-link disabled" href="/product/add"/> Dodaj produkt</button>
-    <br>
-    <input type="submit" value="Wyślij dostawę">
-</form:form>
+                    <br><br>
+                    <button id="dodaj-produkt" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4"> <i class="fa fa-plus-square-o"></i><a class="nav-link disabled" href="/product/add"/> Dodaj produkt</button>
+                </div>
+                </form:form>
+                </sec:authorize>
+                <sec:authorize access="isAnonymous()">
+                <h1 align="center">Aby zobaczyć treści musisz być zalogowany</h1>
+                </sec:authorize>
+
+
 
 </body>
 </html>

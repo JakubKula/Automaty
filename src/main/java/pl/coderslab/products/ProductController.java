@@ -20,8 +20,7 @@ public class ProductController {
 
     @ModelAttribute("type")
     public List<String> getAllPublishers(){
-        List<String> typeList = Arrays.asList(new String[]{"puszka", "PET", "snak"});
-        return typeList;
+        return Arrays.asList("puszka", "PET", "snak");
     }
 
     @RequestMapping("/all")

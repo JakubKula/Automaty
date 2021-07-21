@@ -13,9 +13,24 @@
     <title>Logout</title>
 </head>
 <body>
-    <form action="<c:url value="/logout"/>" method="post">
-        <input class="fa fa-id-badge" type="submit" value="Wyloguj"/>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    </form>
+<%@include file="../header.jsp"%>
+<sec:authorize access="isAuthenticated()">
+<section class="dashboard-section">
+    <div class="container pt-4 pb-4">
+        <div class="border-dashed view-height">
+            <div class="container w-25">
+                <form class="padding-small text-center" action="<c:url value="/logout"/>" method="post">
+                    <h1 class="text-color-darker">Zalogowany jako (<sec:authentication property = "principal.username"/>), czy chcesz sie wylogować?</h1>
+                    <input class="btn btn-color rounded-0" type="submit" value="Wyloguj"/>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</sec:authorize>
+<sec:authorize access="isAnonymous()">
+    <h1 align="center">Nie jesteś zalogowany</h1>
+</sec:authorize>
 </body>
 </html>

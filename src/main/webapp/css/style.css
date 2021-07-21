@@ -7,11 +7,17 @@
   --background-color: #4b4c4a;
   --lighter-background-color: #5a615f;
   --lighter-text-color: #9fa292;
+  --error-text: red;
   --dark-text: #000000;
   --blue: #007bff;
   --yellow: #ffc107;
   --green: #1e7e34;
   font-size: 16px;
+}
+
+container-1{
+  width: 300px;
+  height: 300px;
 }
 
 * {

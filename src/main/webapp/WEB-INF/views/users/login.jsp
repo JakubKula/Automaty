@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <input type="password" class="form-control" id="password" name="password" placeholder="podaj hasło" required>
                     </div>
-                    <input class="btn btn-color rounded-0" type="submit" value="Zaloguj"/>
+                  <input class="btn btn-color rounded-0" type="submit" value="Zaloguj"/>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </form>
             </div>

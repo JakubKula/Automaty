@@ -15,13 +15,12 @@
 <body>
 <%@include file="header.jsp"%>
 
-<h1 align="center">Hello from JSP</h1>
-<h1 align="center">Strona w budowie</h1>
+<sec:authorize access="isAnonymous()">
+    <h1 align="center">Witaj, zaloguj sie</h1>
+</sec:authorize>
+
 <sec:authorize access="isAuthenticated()">
-    <form  action="<c:url value="/logout"/>" method="post">
-        <input align="center" type="submit" value="Wyloguj">
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    </form>
+    <h1 align="center">Witaj <sec:authentication property = "principal.username"/></h1>
 </sec:authorize>
 </body>
 </html>
