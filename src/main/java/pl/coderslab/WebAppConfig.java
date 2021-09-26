@@ -1,5 +1,8 @@
 package pl.coderslab;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,4 +15,5 @@ public class WebAppConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("users/login");
         registry.addViewController("/403").setViewName("403");
     }
+
 }

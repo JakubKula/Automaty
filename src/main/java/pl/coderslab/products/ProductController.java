@@ -26,7 +26,7 @@ public class ProductController {
     @RequestMapping("/all")
     public String all(Model model){
         model.addAttribute("items", productRepository.findAll());
-        return "/product/all";
+            return "/product/all";
     }
     @GetMapping("/add")
     public String add(Model model) {

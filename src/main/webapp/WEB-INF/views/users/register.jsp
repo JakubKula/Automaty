@@ -20,7 +20,7 @@
             <div class="container w-25">
                 <form class="padding-small text-center" action="/login" method="post">
                     <h1>Rejestracja</h1>
-                    <form:form method="post" modelAttribute="user">
+                    <form:form method="post" action="/register" modelAttribute="user">
                         <br>Nazwa użytkownika<br>
                         <form:input path="username" placeholder="podaj nazwę użytkownika" />
                         <form:errors path="username"/>
