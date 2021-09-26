@@ -1,27 +1,31 @@
 # Automaty
 
-Aplikacja dla firmy ktora zajmuje sie obsluga automatów.
+Aplikacja dla firmy, która zajmuje się obsługa automatów.
 
-Mozliwosci:
-- dodawanie/usuwanie/edycja produktu
-- dodawanie/usuwanie/edycja magazynow.
-- zrobienie dostawy produktu do magazynu
-- wyswietlenie stanu magazynu
-- dodanie/usuniecie/edycja samochodu
-- zrobienie zaldadunku produktow z magazynu na samochod
-- wyswietlenie stanu produktow na samochodzie
-- dodawanie/usuwanie/edycja automatów
-- wysiwetlanie stanu produktów w automacie oraz ich cen, wartosc produktow w automacie oraz (ilosc gotówki*)
-- usuniecie produktu z magazynu/samochodu/automatu z powodu przeterminowania/sprzedania/zjedzenia/zniszczenia 
-  (gdy prodkut z automatu zostaie spzredany, ilosc gotowki w automacie zrosnie o jego wartosc)
-- ustawienie cen produktow na automacie
-- wyswietlanie dostaw/zaladunkow samochodu/zaladunkow automatu/zniszczone/pzreterminowane/zjedzone/spzredane zrobionych przez uzytkownika,
-  posegregowanych w zaleznosci od grupy oraz daty
-  
-Admin posiada dodatkowe mozliwosci 
-- rejstracja nowych uztkownikow 
-- przegladanie dostaw/zaladunkow/... itd poszczegolnych uzytkownikow
-- przegladanie wszytskich dostaw/zaladunkow/... itd oraz mozliowsc usuniecia poszczegolnej dostawy/zaladunku/...itd 
-  (cofa zmiany wprowadzone przez ta dostawe/zaladunek/... itd) - usuwanie w przypadku popelnienia bledu
+Możliwości:
+– dodawanie/usuwanie/edycja produktu
+– dodawanie/usuwanie/edycja magazynów.
+– Zrobienie dostawy produktu do magazynu
+– wyświetlenie stanu magazynu
+– dodanie/usunięcie/edycja samochodu
+– zrobienie załadunku produktów z magazynu na samochód
+– wyświetlenie stanu produktów na samochodzie
+– dodawanie/usuwanie/edycja automatów
+– wyświetlanie stanu produktów w automacie oraz ich cen, wartość produktów w automacie oraz (ilość gotówki*)
+– usunięcie produktu z magazynu/samochodu/automatu z powodu przeterminowania/sprzedania/zjedzenia/zniszczenia
+(gdy produkt z automatu zostaje sprzedany, ilość gotówki w automacie wzrośnie o jego wartość)
+– ustawienie cen produktów na automacie
+– wyświetlanie dostaw/załadunków samochodu/załadunków automatu/zniszczone/przeterminowane/zjedzone/sprzedane zrobionych przez użytkownika,
+posegregowanych w zależności od grupy oraz daty.
+
+Admin posiada dodatkowe możliwości
+– rejestracja nowych użytkowników
+– przeglądanie dostaw/załadunków/… itd. poszczególnych użytkowników
+– przeglądanie wszystkich dostaw/załadunków/… itd. oraz możliwość usunięcia poszczególnej dostawy/załadunku/… itd.
+(cofa zmiany wprowadzone przez tę dostawę/załadunek/… itd.) – usuwanie w przypadku popełnienia błędu.
+
+Jest dump. SQL z podstawowymi danymi,
+zwykły użytkownik login: 123, hasło: 123.
+Admin login: admin, hasło: admin.
 
 *dopracowywane
